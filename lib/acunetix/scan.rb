@@ -12,7 +12,7 @@ module Acunetix
     # Accepts an XML node from Nokogiri::XML.
     def initialize(xml_node)
       @xml = xml_node
-      unless @xml.name == "Scan"
+      unless @xml.nil? || (@xml.name == "Scan")
         raise "Invalid XML; root node must be called 'Scan'"
       end
     end
